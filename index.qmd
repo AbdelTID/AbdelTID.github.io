@@ -14,7 +14,8 @@ about:
 ---
 
 Research assistant at [African School of Economics](https://www.africanschoolofeconomics.com/).<br>
-My research fields are micro, macro, political economics, development economics.
+My research fields are micro, political economics, development economics.
+
 
 ::: {style="text-align: right"}
 [Read More →](../about)

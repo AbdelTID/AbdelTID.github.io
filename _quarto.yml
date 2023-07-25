@@ -2,6 +2,7 @@ project:
   type: website
   output-dir: docs
   preview:
+    port: 5012
     browser: true
     watch-inputs: true
     navigate: true
@@ -11,7 +12,7 @@ website:
   favicon: static/img/favicon.ico
   site-url: https://abdeltid.github.io/
   repo-url: https://github.com/AbdelTID/AbdelTID.github.io
-  google-analytics: "G-0VBCN1EY2D"
+  google-analytics: "G-5RYYCCRQ2N"
   navbar:
     right:
       - text: About
@@ -21,7 +22,7 @@ website:
       - text: Project
         file: project/index.qmd
       - text: CV
-        href: https://abdeltid.github.io//cv/cv.pdf
+        href: https://abdeltid.github.io/cv/cv.pdf
       - text: Talks
         file: talks/index.qmd
   page-footer:
@@ -32,7 +33,7 @@ website:
     center: |
       <span class="faux-block">[{{< fa brands github >}}]({{< var github-url >}}) [{{< fa brands linkedin >}}]({{< var linkedin-url >}})</span>
     right: |
-      <span class="faux-block">Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)</span>
+      <span class="faux-block">Made with {{< fa brands vscode >}} and [Quarto](https://quarto.org/)</span>
       <span class="faux-block">View the source at [{{< fa brands github >}} GitHub]({{< var repo-url >}})</span>
       
 format:

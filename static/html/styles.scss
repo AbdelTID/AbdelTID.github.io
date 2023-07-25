@@ -136,9 +136,9 @@ $footer-fg: $gray-500 !default;
     }
 }
 
-// Blog
-.blog {
-    .blog-entry {
+// Project
+.project {
+    .project-entry {
         display: flex;
         flex-direction: row;
         font-family: sans-serif;
@@ -205,7 +205,7 @@ $footer-fg: $gray-500 !default;
     }
 }
 
-.blog-post {
+.project-post {
     .quarto-title .quarto-categories {
         margin-top: 1.5em;
 

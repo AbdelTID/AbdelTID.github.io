@@ -1,1 +1,1 @@
-Sitemap: https://abdeltid.com/sitemap.xml
+Sitemap: https://abdeltid.github.io/sitemap.xml
