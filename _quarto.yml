@@ -9,7 +9,7 @@ project:
 
 website:
   title: "Abdel An'lah Tidjani"
-  favicon: static/img/favicon.ico
+  favicon: static/img/favicon.png
   site-url: https://abdeltid.github.io/
   repo-url: https://github.com/AbdelTID/AbdelTID.github.io
   google-analytics: "G-5RYYCCRQ2N"
@@ -38,8 +38,10 @@ website:
       
 format:
   html:
-    theme: 
-      - static/html/styles.scss
+    theme:
+      light: static/html/styles.scss
+      dark: static/html/dark_styles.scss
+      
 
 
 
