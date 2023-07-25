@@ -1,0 +1,47 @@
+project:
+  type: website
+  output-dir: docs
+  preview:
+    browser: true
+    watch-inputs: true
+    navigate: true
+
+website:
+  title: "Abdel An'lah Tidjani"
+  favicon: static/img/favicon.ico
+  site-url: https://abdeltid.com
+  repo-url: https://github.com/AbdelTID/AbdelTID.github.io
+  google-analytics: "G-0VBCN1EY2D"
+  navbar:
+    right:
+      - text: About
+        file: about/index.qmd
+      - text: Research
+        file: research/index.qmd
+      - text: Project
+        file: project/index.qmd
+      - text: CV
+        href: https://abdeltid.com/cv/cv.pdf
+      - text: Talks
+        file: talks/index.qmd
+  page-footer:
+    left: |
+      <span class="faux-block">{{< fa brands creative-commons >}} {{< var years >}} Abdel An'lah Tidjani</span>
+      <span class="faux-block">All content licensed under</span>
+      <span class="faux-block">[{{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-sa >}} Creative Commons CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)</span>
+    center: |
+      <span class="faux-block">[{{< fa brands github >}}]({{< var github-url >}}) [{{< fa brands linkedin >}}]({{< var linkedin-url >}})</span>
+    right: |
+      <span class="faux-block">Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)</span>
+      <span class="faux-block">View the source at [{{< fa brands github >}} GitHub]({{< var repo-url >}})</span>
+      
+format:
+  html:
+    theme: 
+      - static/html/custom.scss
+
+
+
+
+
+
