@@ -43,7 +43,7 @@ I am a research assistant at [African School of Economics](https://www.africansc
 [See All →](../research)
 :::
 
-## A PROJECT THAT LAST
+## LAST PROJECT 
 
 :::{#project}
 :::
@@ -52,7 +52,7 @@ I am a research assistant at [African School of Economics](https://www.africansc
 [See All →](../project)
 :::
 
-## TALKS THAT LAST
+## LAST TALKS
 
 :::{#talks}
 :::
