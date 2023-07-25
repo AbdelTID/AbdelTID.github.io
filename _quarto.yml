@@ -33,7 +33,7 @@ website:
     center: |
       <span class="faux-block">[{{< fa brands github >}}]({{< var github-url >}}) [{{< fa brands linkedin >}}]({{< var linkedin-url >}})</span>
     right: |
-      <span class="faux-block">Made with {{< fa brands vscode >}} and [Quarto](https://quarto.org/)</span>
+      <span class="faux-block">Made with [VS Code](https://code.visualstudio.com/) and [Quarto](https://quarto.org/)</span>
       <span class="faux-block">View the source at [{{< fa brands github >}} GitHub]({{< var repo-url >}})</span>
       
 format:
