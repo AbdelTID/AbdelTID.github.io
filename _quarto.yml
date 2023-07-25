@@ -9,7 +9,7 @@ project:
 website:
   title: "Abdel An'lah Tidjani"
   favicon: static/img/favicon.ico
-  site-url: https://abdeltid.com
+  site-url: https://abdeltid.github.io/
   repo-url: https://github.com/AbdelTID/AbdelTID.github.io
   google-analytics: "G-0VBCN1EY2D"
   navbar:
@@ -21,7 +21,7 @@ website:
       - text: Project
         file: project/index.qmd
       - text: CV
-        href: https://abdeltid.com/cv/cv.pdf
+        href: https://abdeltid.github.io//cv/cv.pdf
       - text: Talks
         file: talks/index.qmd
   page-footer:
