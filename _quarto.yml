@@ -38,7 +38,7 @@ website:
 format:
   html:
     theme: 
-      - static/html/custom.scss
+      - static/html/styles.scss
 
 
 
