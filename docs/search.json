@@ -25,7 +25,7 @@
     "href": "about/index.html",
     "title": "Hi There!",
     "section": "",
-    "text": "I am a research assistant at African School of Economics in Abomey-Calavi, Benin.\nMaster in Mathematics Economics and Statistics (MMES) ∙ African School of Economics ∙ 2023\nBachelor in Statistics ∙ University of Abomey-Calavi | ENEAM ∙ 2019"
+    "text": "I am a dedicated and enthusiastic Statistician specializing in the field of Economics, driven by a profound love for Python programming. With an insatiable curiosity for data and its profound impact on economic phenomena.\nCurrently research assistant at African School of Economics in Abomey-Calavi, Benin.\nMy research areas are microeconomics, political economy, development economics.\nMaster in Mathematics Economics and Statistics (MMES) ∙ African School of Economics ∙ 2023\nBachelor in Statistics ∙ University of Abomey-Calavi | ENEAM ∙ 2019"
   },
   {
     "objectID": "about/index.html#working-papers",
@@ -138,5 +138,19 @@
     "title": "Talks that Last",
     "section": "2022",
     "text": "2022"
+  },
+  {
+    "objectID": "research/index.html#working-papers",
+    "href": "research/index.html#working-papers",
+    "title": "Research",
+    "section": "WORKING PAPERS",
+    "text": "WORKING PAPERS"
+  },
+  {
+    "objectID": "research/index.html#work-in-progress",
+    "href": "research/index.html#work-in-progress",
+    "title": "Research",
+    "section": "WORK IN PROGRESS",
+    "text": "WORK IN PROGRESS"
   }
 ]

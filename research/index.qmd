@@ -1,20 +1,25 @@
 ---
-title: "Research"
-title-block-banner: "#fff"
+title: Research 
+author: ""
 page-layout: full
 toc: true
 toc-location: right
-toc-title: Year
+toc-title: Contents
 date-format: "MMMM D, YYYY"
 ---
 
 
+## PUBLICATION
 
-## PUBLICATIONS
-
-
+:::{#publications}
+:::
 
 ## WORKING PAPERS
 
+:::{#working-papers}
+:::
 
 ## WORK IN PROGRESS
+
+:::{#work-in-progress}
+:::

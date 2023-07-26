@@ -24,8 +24,11 @@ page-layout: full
 title-block-banner: true
 ---
 
-I am a research assistant at [African School of Economics](https://www.africanschoolofeconomics.com/) in Abomey-Calavi, Benin.
+I am a dedicated and enthusiastic Statistician specializing in the field of Economics, driven by a profound love for Python programming. With an insatiable curiosity for data and its profound impact on economic phenomena.
 
+Currently research assistant at [African School of Economics](https://www.africanschoolofeconomics.com/) in Abomey-Calavi, Benin.
+
+My research areas are microeconomics, political economy, development economics.
 
 
 {{< fa graduation-cap >}} Master in Mathematics Economics and Statistics (MMES)  &#8729; African School of Economics  &#8729;  2023
