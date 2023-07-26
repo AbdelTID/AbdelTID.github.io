@@ -103,5 +103,33 @@
     "title": "Holiday Plotly Dash Challenge",
     "section": "",
     "text": "The Dash app won first place 🥇. It was developed for the Dash Holiday Challenge 2022. Customer Churn data was used. It analyzes customer churn behavior and uses a classification model to predict which customers are at risk of churn. By understanding and addressing the root causes of churn, we can work to retain valuable customers and improve the company’s revenue and profitability. Our analysis has identified two main profiles:\n\nA high-risk profile for churn is a customer on a month-to-month contract, using Fiber Optic service, with electronic check as their payment method, and who does not subscribe to online services and technical support services.\nA low risk profile for churn is a customer on a two-year contract, using DSL as their Internet service, and who subscribes to online services or technical support.\n\n\nThe Challenge contest\nBuild an impressive customer segmentation data app using the provided IBM customer churn dataset . The app should provide insights on the relationship between churn and customers’ characteristics, have a well-designed interface, and utilize data exploration and analysis techniques such as numerical methods, machine learning, prediction, classification, and optimization. Submit the app code and a link to the deployed app by midnight on Saturday, January 14 for a chance to win the Plotly Community Challenge.\nRead more on Plotly Community\n\n\nMy app solution\nThe App was designed in seven sections, as follows:\n\nWelcome : Welcome page.\n\n\n\nCustomers : Display customer information\n\n\n\nInsights : Give an overview of customers behavior.\n\n\n\nExploratory: Show relationship between churn and monthly charges within customer caracteristiques.\n\n\n\nClassification: This section provides model building and Churn prediction\n\n\n\nSummary: Give a summary of the app.\n\n\n\nAbout: Who am I?.\n\n\n\n\nApp won first place\n\nRead more on Plotly Medium.\n\nView project website\nhttps://live-abdelanlah-plotlydash-churn.onrender.com/\n\n\n\n\n\n\nNote\n\n\n\nVery slow. We recommend to run the app locally by creating a virtual environment with the provided requirements.txt. Then just run app.py, open your browser and go to http://127.0.0.1:8050/.\n\n\n\n\n\n\n\n\nYou need to have git and python installed\n\n\n\ngit clone https://github.com/AbdelTID/Holiday-Plotly-Dash-Challenge.git\ncd \"Holiday-Plotly-Dash-Challenge\"\npip install -r requirements.txt\npython3 app.py\n\n\n\n\nView project repo\nhttps://github.com/AbdelTID/Holiday-Plotly-Dash-Challenge"
+  },
+  {
+    "objectID": "docs/talks/index.html",
+    "href": "docs/talks/index.html",
+    "title": "Talks that Last",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "docs/talks/index.html#section",
+    "href": "docs/talks/index.html#section",
+    "title": "Talks that Last",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "docs/talks/index.html#section-1",
+    "href": "docs/talks/index.html#section-1",
+    "title": "Talks that Last",
+    "section": "2022",
+    "text": "2022\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "docs/talks/index.html#section-2",
+    "href": "docs/talks/index.html#section-2",
+    "title": "Talks that Last",
+    "section": "2021",
+    "text": "2021\n\n\n\n\nNo matching items"
   }
 ]
