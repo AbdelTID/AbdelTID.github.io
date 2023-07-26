@@ -1,5 +1,6 @@
 ---
 title: Research 
+description: "A list of all the authorships and co-authorships of research papers"
 author: ""
 page-layout: full
 toc: true

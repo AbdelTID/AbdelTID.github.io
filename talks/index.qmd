@@ -1,7 +1,6 @@
 ---
 title: "Talks that Last"
 description: "A list of my talks, workshops, or other events with a time, date, and place"
-title-block-banner: "#fff"
 page-layout: full
 toc: true
 toc-location: right
