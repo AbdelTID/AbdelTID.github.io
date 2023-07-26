@@ -23,7 +23,11 @@ The Dash app won first place 🥇. It was developed for the Dash Holiday Challen
            
 
 
-#### The contest
+#### The Challenge contest
+
+Build an impressive customer segmentation data app using the provided IBM [customer churn dataset](https://raw.githubusercontent.com/plotly/datasets/master/telco-customer-churn-by-IBM.csv) . The app should provide insights on the relationship between churn and customers' characteristics, have a well-designed interface, and utilize data exploration and analysis techniques such as numerical methods, machine learning, prediction, classification, and optimization. Submit the app code and a link to the deployed app by midnight on Saturday, January 14 for a chance to win the Plotly Community Challenge.
+
+Read more on [Plotly Community](https://community.plotly.com/t/holiday-community-app-building-challenge/70393)
 
 #### My app solution
 
@@ -62,7 +66,7 @@ The App was designed in seven sections, as follows:
 
 ![](img/win.png)
 
-Read on Plotly [Medium](https://medium.com/plotly/dash-club-9-new-gallery-community-app-winners-winter-challenge-partial-property-updates-29d352de7705#329d) webpage.
+Read more on [Plotly Medium](https://medium.com/plotly/dash-club-9-new-gallery-community-app-winners-winter-challenge-partial-property-updates-29d352de7705#329d).
 
 ##### View project website
 [https://live-abdelanlah-plotlydash-churn.onrender.com/](https://live-abdelanlah-plotlydash-churn.onrender.com/)
