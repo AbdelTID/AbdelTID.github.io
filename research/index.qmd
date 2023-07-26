@@ -1,0 +1,20 @@
+---
+title: "Research"
+title-block-banner: "#fff"
+page-layout: full
+toc: true
+toc-location: right
+toc-title: Year
+date-format: "MMMM D, YYYY"
+---
+
+
+
+## PUBLICATIONS
+
+
+
+## WORKING PAPERS
+
+
+## WORK IN PROGRESS
