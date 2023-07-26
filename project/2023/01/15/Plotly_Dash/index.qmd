@@ -1,0 +1,30 @@
+---
+title: "Holiday Plotly Dash Challenge"
+date: 2023-1-15
+author: Abdel An'lah Tidjani
+categories: [Plotly, Dash, Python, Churn]
+image: ./img/ch.png
+twitter-card:
+  image: ./img/ch.png
+knitr: true
+execute: 
+  warning: false
+  message: false
+---
+
+
+Dash app developed for the Dash Autumn Challenge 2022. [Customer Churn](https://community.ibm.com/community/user/businessanalytics/blogs/steven-macko/2019/07/11/telco-customer-churn-1113)  data was used. It analyzes customer churn behavior and uses a classification model to predict which customers are at risk of churn. By understanding and addressing the root causes of churn, we can work to retain valuable customers and improve your company's revenue and profitability. Our analysis has identified two main profiles:
+
+
+- A _high-risk profile_ for churn is a customer on a month-to-month contract, using Fiber Optic service, with electronic check as their payment method, and who does not subscribe to online services and  technical support services.
+
+- A _low risk profile_ for churn is a customer on a two-year contract, using DSL as their Internet service, and who subscribes to online services or technical support.
+           
+
+
+### THE CONTEST
+
+
+### MY APP SOLUTION
+
+### APP WON FIRST PLACE

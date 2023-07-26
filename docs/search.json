@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Abdel An’lah Tidjani",
     "section": "",
-    "text": "Research assistant at African School of Economics. My research fields are micro, political economics, development economics.\n\nRead More →"
+    "text": "Research Assistant at African School of Economics. My research areas are microeconomics, political economy, development economics.\n\nRead More →"
   },
   {
     "objectID": "about.html",
@@ -60,7 +60,7 @@
     "href": "about/index.html#last-project",
     "title": "Hi There!",
     "section": "LAST PROJECT",
-    "text": "LAST PROJECT\n\n\n\n\nNo matching items\n\n\n\nSee All →"
+    "text": "LAST PROJECT\n\n\n    \n            \n                \n            \n        \n            Holiday Plotly Dash Challenge\n            \n                \n                    Plotly\n                \n                \n                    Dash\n                \n                \n                    Python\n                \n                \n                    Churn\n                \n            \n            \n        \n    \n\n\nNo matching items\n\n\n\nSee All →"
   },
   {
     "objectID": "about/index.html#last-talks",
@@ -68,5 +68,33 @@
     "title": "Hi There!",
     "section": "LAST TALKS",
     "text": "LAST TALKS\n\n\n\n\nNo matching items\n\n\n\nSee All →"
+  },
+  {
+    "objectID": "project/index.html",
+    "href": "project/index.html",
+    "title": "Project",
+    "section": "",
+    "text": "January 15, 2023\n        \n        \n            Holiday Plotly Dash Challenge\n            \n                \n                    Plotly\n                \n                \n                    Dash\n                \n                \n                    Python\n                \n                \n                    Churn\n                \n            \n            \n        \n        \n            \n        \n    \n\n\nNo matching items"
+  },
+  {
+    "objectID": "project/index.html#section",
+    "href": "project/index.html#section",
+    "title": "Project",
+    "section": "",
+    "text": "January 15, 2023\n        \n        \n            Holiday Plotly Dash Challenge\n            \n                \n                    Plotly\n                \n                \n                    Dash\n                \n                \n                    Python\n                \n                \n                    Churn\n                \n            \n            \n        \n        \n            \n        \n    \n\n\nNo matching items"
+  },
+  {
+    "objectID": "project/index.html#section-1",
+    "href": "project/index.html#section-1",
+    "title": "Project",
+    "section": "2022",
+    "text": "2022\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "project/2023/01/15/Plotly_Dash/index.html",
+    "href": "project/2023/01/15/Plotly_Dash/index.html",
+    "title": "Holiday Plotly Dash Challenge",
+    "section": "",
+    "text": "Dash app developed for the Dash Autumn Challenge 2022. Customer Churn data was used. It analyzes customer churn behavior and uses a classification model to predict which customers are at risk of churn. By understanding and addressing the root causes of churn, we can work to retain valuable customers and improve your company’s revenue and profitability. Our analysis has identified two main profiles:\n\nA high-risk profile for churn is a customer on a month-to-month contract, using Fiber Optic service, with electronic check as their payment method, and who does not subscribe to online services and technical support services.\nA low risk profile for churn is a customer on a two-year contract, using DSL as their Internet service, and who subscribes to online services or technical support.\n\n\nTHE CONTEST\n\n\nMY APP SOLUTION\n\n\nAPP WON FIRST PLACE"
   }
 ]

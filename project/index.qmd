@@ -1,6 +1,6 @@
 ---
 title: "Project"
-description: "Different project I worked on (for Fun, Competiton, Academic, work)"
+description: "Different projects I have worked on (for fun, competition, academic, work)"
 author: ""
 listing:
   - id: posts_2023
