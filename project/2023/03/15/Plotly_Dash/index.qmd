@@ -17,9 +17,9 @@ execute:
 The Dash app won first place 🥇. It was developed for the Dash Holiday Challenge 2022. [Customer Churn](https://community.ibm.com/community/user/businessanalytics/blogs/steven-macko/2019/07/11/telco-customer-churn-1113)  data was used. It analyzes customer churn behavior and uses a classification model to predict which customers are at risk of churn. By understanding and addressing the root causes of churn, we can work to retain valuable customers and improve the company's revenue and profitability. Our analysis has identified two main profiles:
 
 
-- A <span style="color: red;">**high-risk profile**</span> for churn is a customer on a month-to-month contract, using Fiber Optic service, with electronic check as their payment method, and who does not subscribe to online services and  technical support services.
+- A <span style="color: crimson;">**high-risk profile**</span> for churn is a customer on a month-to-month contract, using Fiber Optic service, with electronic check as their payment method, and who does not subscribe to online services and  technical support services.
 
-- A <span style="color: blue;">**low risk profile**</span> for churn is a customer on a two-year contract, using DSL as their Internet service, and who subscribes to online services or technical support.
+- A <span style="color: green;">**low risk profile**</span> for churn is a customer on a two-year contract, using DSL as their Internet service, and who subscribes to online services or technical support.
            
 
 
@@ -27,20 +27,63 @@ The Dash app won first place 🥇. It was developed for the Dash Holiday Challen
 
 #### My app solution
 
-- `Welcome`: Welcome page.
-- `Customers`: Display each customer information.
-- `Insights`: This section gives an overview of customers behavior. 
-- `Exploratory`: This section shows relationship between churn and monthly charges within customer caracteristiques.
-- `Classification`: This section provides  model building and Churn prediction
-- `Summary`: Give a summary of the app. 
-- `About`: Who I am?.
+The App was designed in seven sections, as follows:
+
+- <span style="color: #5D3FD3">Welcome</span> : Welcome page.
+
+![](img/wel.png)
+
+- <span style="color: #5D3FD3">Customers</span> : Display customer information
+
+![](img/custm.png)
+
+- <span style="color: #5D3FD3">Insights</span> : Give an overview of customers behavior. 
+
+![](img/insg.png)
+
+
+- <span style="color: #5D3FD3">Exploratory</span>: Show relationship between churn and monthly charges within customer caracteristiques.
+
+![](img/eda.png)
+
+- <span style="color: #5D3FD3">Classification</span>: This section provides  model building and Churn prediction
+
+![](img/class.png)
+
+- <span style="color: #5D3FD3">Summary</span>: Give a summary of the app. 
+
+![](img/sum.png)
+
+- <span style="color: #5D3FD3">About</span>: Who am I?.
+
+![](img/about.png)
 
 #### App won first place
 
+![](img/win.png)
+
+Read on Plotly [Medium](https://medium.com/plotly/dash-club-9-new-gallery-community-app-winners-winter-challenge-partial-property-updates-29d352de7705#329d) webpage.
+
 ##### View project website
+[https://live-abdelanlah-plotlydash-churn.onrender.com/](https://live-abdelanlah-plotlydash-churn.onrender.com/)
+
+:::{.callout-note}
+Very slow. We recommend to run the app locally by creating a virtual environment with the provided `requirements.txt`. Then just run `app.py`, open your browser and go to `http://127.0.0.1:8050/`.
+:::
+
+:::{.callout-tip}
+## You need to have [git](https://git-scm.com/downloads) and [python](https://www.python.org/downloads/) installed
+
+```{.bash}
+git clone https://github.com/AbdelTID/Holiday-Plotly-Dash-Challenge.git
+cd "Holiday-Plotly-Dash-Challenge"
+pip install -r requirements.txt
+python3 app.py
+```
+:::
 
 ##### View project repo
 
-
+[https://github.com/AbdelTID/Holiday-Plotly-Dash-Challenge](https://github.com/AbdelTID/Holiday-Plotly-Dash-Challenge)
 
 <div>

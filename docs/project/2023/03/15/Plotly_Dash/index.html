@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -130,77 +164,132 @@ gtag('config', 'G-5RYYCCRQ2N', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Holiday Plotly Dash Challenge</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Plotly</div>
+                <div class="quarto-category">Dash</div>
+                <div class="quarto-category">Python</div>
+                <div class="quarto-category">Churn</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Abdel An’lah Tidjani </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 15, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Holiday Plotly Dash Challenge</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Plotly</div>
-    <div class="quarto-category">Dash</div>
-    <div class="quarto-category">Python</div>
-    <div class="quarto-category">Churn</div>
-  </div>
-  </div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Abdel An’lah Tidjani </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">March 15, 2023</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
 
 <div style="text-align: justify">
 
 <p>The Dash app won first place 🥇. It was developed for the Dash Holiday Challenge 2022. <a href="https://community.ibm.com/community/user/businessanalytics/blogs/steven-macko/2019/07/11/telco-customer-churn-1113">Customer Churn</a> data was used. It analyzes customer churn behavior and uses a classification model to predict which customers are at risk of churn. By understanding and addressing the root causes of churn, we can work to retain valuable customers and improve the company’s revenue and profitability. Our analysis has identified two main profiles:</p>
 <ul>
-<li><p>A <span style="color: red;"><strong>high-risk profile</strong></span> for churn is a customer on a month-to-month contract, using Fiber Optic service, with electronic check as their payment method, and who does not subscribe to online services and technical support services.</p></li>
-<li><p>A <span style="color: blue;"><strong>low risk profile</strong></span> for churn is a customer on a two-year contract, using DSL as their Internet service, and who subscribes to online services or technical support.</p></li>
+<li><p>A <span style="color: crimson;"><strong>high-risk profile</strong></span> for churn is a customer on a month-to-month contract, using Fiber Optic service, with electronic check as their payment method, and who does not subscribe to online services and technical support services.</p></li>
+<li><p>A <span style="color: green;"><strong>low risk profile</strong></span> for churn is a customer on a two-year contract, using DSL as their Internet service, and who subscribes to online services or technical support.</p></li>
 </ul>
 <section id="the-contest" class="level4">
 <h4 class="anchored" data-anchor-id="the-contest">The contest</h4>
 </section>
 <section id="my-app-solution" class="level4">
 <h4 class="anchored" data-anchor-id="my-app-solution">My app solution</h4>
+<p>The App was designed in seven sections, as follows:</p>
 <ul>
-<li><code>Welcome</code>: Welcome page.</li>
-<li><code>Customers</code>: Display each customer information.</li>
-<li><code>Insights</code>: This section gives an overview of customers behavior.</li>
-<li><code>Exploratory</code>: This section shows relationship between churn and monthly charges within customer caracteristiques.</li>
-<li><code>Classification</code>: This section provides model building and Churn prediction</li>
-<li><code>Summary</code>: Give a summary of the app.</li>
-<li><code>About</code>: Who I am?.</li>
+<li><span style="color: #5D3FD3">Welcome</span> : Welcome page.</li>
 </ul>
+<p><img src="img/wel.png" class="img-fluid"></p>
+<ul>
+<li><span style="color: #5D3FD3">Customers</span> : Display customer information</li>
+</ul>
+<p><img src="img/custm.png" class="img-fluid"></p>
+<ul>
+<li><span style="color: #5D3FD3">Insights</span> : Give an overview of customers behavior.</li>
+</ul>
+<p><img src="img/insg.png" class="img-fluid"></p>
+<ul>
+<li><span style="color: #5D3FD3">Exploratory</span>: Show relationship between churn and monthly charges within customer caracteristiques.</li>
+</ul>
+<p><img src="img/eda.png" class="img-fluid"></p>
+<ul>
+<li><span style="color: #5D3FD3">Classification</span>: This section provides model building and Churn prediction</li>
+</ul>
+<p><img src="img/class.png" class="img-fluid"></p>
+<ul>
+<li><span style="color: #5D3FD3">Summary</span>: Give a summary of the app.</li>
+</ul>
+<p><img src="img/sum.png" class="img-fluid"></p>
+<ul>
+<li><span style="color: #5D3FD3">About</span>: Who am I?.</li>
+</ul>
+<p><img src="img/about.png" class="img-fluid"></p>
 </section>
 <section id="app-won-first-place" class="level4">
 <h4 class="anchored" data-anchor-id="app-won-first-place">App won first place</h4>
+<p><img src="img/win.png" class="img-fluid"></p>
+<p>Read on Plotly <a href="https://medium.com/plotly/dash-club-9-new-gallery-community-app-winners-winter-challenge-partial-property-updates-29d352de7705#329d">Medium</a> webpage.</p>
 <section id="view-project-website" class="level5">
 <h5 class="anchored" data-anchor-id="view-project-website">View project website</h5>
+<p><a href="https://live-abdelanlah-plotlydash-churn.onrender.com/">https://live-abdelanlah-plotlydash-churn.onrender.com/</a></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Very slow. We recommend to run the app locally by creating a virtual environment with the provided <code>requirements.txt</code>. Then just run <code>app.py</code>, open your browser and go to <code>http://127.0.0.1:8050/</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+You need to have <a href="https://git-scm.com/downloads">git</a> and <a href="https://www.python.org/downloads/">python</a> installed
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/AbdelTID/Holiday-Plotly-Dash-Challenge.git</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="st">"Holiday-Plotly-Dash-Challenge"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> app.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
 <section id="view-project-repo" class="level5">
 <h5 class="anchored" data-anchor-id="view-project-repo">View project repo</h5>
+<p><a href="https://github.com/AbdelTID/Holiday-Plotly-Dash-Challenge">https://github.com/AbdelTID/Holiday-Plotly-Dash-Challenge</a></p>
 <div>
 
 
@@ -558,6 +647,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://giscus.app/client.js" data-repo="AbdelTID/AbdelTID.github.io" data-repo-id="R_kgDOJHSnpg" data-category="General" data-category-id="DIC_kwDOJHSnps4CYI28" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 <footer class="footer">
