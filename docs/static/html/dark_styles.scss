@@ -1,0 +1,480 @@
+/*-- scss:defaults --*/
+
+@import url(https://fonts.googleapis.com/css?family=Fraunces&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Commissioner&display=swap);
+
+//
+// Color system
+//
+
+$color-main: #516db0 !default;
+
+$white:    #ffffff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #373a3c !default;
+$gray-900: #212529 !default;
+$black:    #000000 !default;
+$dark_pr:  #28282B !default;
+
+$blue:    #2780e3 !default;
+$indigo:  #6610f2 !default;
+$purple:  #170C3A !default;
+$pink:    #A52C60 !default;
+$red:     #CF4446 !default;
+$orange:  #EE6A24 !default;
+$light-orange:  #FB9E07 !default;
+$yellow:  #F6D645 !default;
+$green:   #118230 !default;
+$teal:    #20c997 !default;
+$cyan:    #3093CF !default;
+
+$primary:   $pink !default;
+$secondary: $gray-700 !default;
+$success:   $green !default;
+$info:      $cyan !default;
+$warning:   $orange !default;
+$danger:    $red !default;
+$light:     $gray-400 !default;
+$dark:      $black !default;
+
+// Fonts
+
+
+$font-family-sans-serif: "Commissioner", sans-serif !default;
+
+$headings-font-family: "Fraunces" !default;
+$headings-font-weight: 600 !default;
+
+$navbar-font-family: sans-serif !default;
+$toc-font-family: sans-serif !default;
+$footer-font-family: sans-serif !default;
+
+
+// Body
+$body-color: $white !default;
+$body-bg: $dark_pr !default;
+
+// Links
+$link-color: $color-main !default;
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+
+// Inline code
+$code-bg: $gray-900 !default;
+$code-color: $gray-100 !default;
+
+// Code copy
+$btn-code-copy-color-active: $orange !default;
+
+// TOC
+$toc-color: $color-main;
+$toc-font-size: 0.9em;
+
+// Navbar
+$navbar-bg: $dark_pr !default;
+$navbar-hl: $color-main !default;
+
+// Footer
+$footer-bg: $dark_pr !default;
+$footer-fg: $gray-500 !default;
+
+/*-- scss:rules --*/
+
+
+
+#quarto-margin-sidebar {
+    .quarto-listing-category-title {
+        margin-left: 0.5em;
+    }
+
+    .quarto-listing-category {
+        font-family: $toc-font-family;
+        font-weight: 300;
+        font-size: 0.9em;
+        line-height: 1.1;
+        padding-left: 0.6rem;
+        margin-left: 0.5em;
+        border-left: 1px solid $gray-800;
+
+        .category {
+            padding-bottom: 0.5rem;
+        }
+
+        .active {
+            font-weight: 400;
+            color: $color-main;
+        }
+
+        .quarto-category-count {
+            font-weight: 200;
+            font-size: 0.8em;
+            color: $gray-400;
+        }
+    }
+}
+
+#title-block-header {
+    .quarto-title-banner {
+        font-family: $headings-font-family;
+        text-align: center;
+        
+        .title {
+            font-size: 3em;
+            font-weight: 400;
+            color: $color-main;
+        }
+        .description {
+            font-family: sans-serif;
+            font-size: 1em;
+            margin-top: 1em !important;
+            color: $gray-300;
+        }
+    }
+}
+
+// Project
+.project {
+    .project-entry {
+        display: flex;
+        flex-direction: row;
+        font-family: sans-serif;
+        line-height: 1.3;
+        margin-bottom: 1.5em;
+        column-gap: 1em;
+
+        .metadata {
+            flex: 0 0 8%;
+        }
+
+        .body {
+            flex: 1 1 auto;
+        }
+
+        .thumbnail {
+            flex: 0 0 25%;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                max-height: 120px;
+            }
+        }
+
+        .title {
+            font-family: $headings-font-family;
+            font-weight: 500;
+            font-size: 1.3em;
+            margin-bottom: 0.2em;
+            line-height: 1.2;
+        }
+
+        .description {
+            font-weight: 300;
+            font-size: 1em;
+            margin-bottom: 0.3em;
+        }
+
+        .date {
+            font-weight: 300;
+            font-size: 0.85em;
+            margin-top: 0.3em;
+            text-align: right;
+        }
+
+        .post-categories {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 0.4em;
+            column-gap: 0.4em;
+            margin: 0.5em 0;
+
+            .post-category {
+                color: $gray-400;
+                border: 1px solid $gray-500;
+                border-radius: 0.25rem;
+                text-transform: uppercase;
+                font-size: 0.65em;
+                padding: 0.15em 0.5em;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.project-post {
+    .quarto-title .quarto-categories {
+        margin-top: 1.5em;
+
+        .quarto-category {
+            background-color: shift-color($purple, -25%);
+            border-color: shift-color($purple, -45%);
+            color: $dark_pr;
+            font-size: 0.65em;
+            opacity: 1;
+        }
+    }
+}
+
+
+// Research
+.research {
+    .research-entry {
+        display: flex;
+        flex-direction: row;
+        font-family: sans-serif;
+        line-height: 1.3;
+        margin-bottom: 1.5em;
+        column-gap: 1em;
+
+        .metadata {
+            flex: 0 0 8%;
+        }
+
+        .body {
+            flex: 1 1 auto;
+        }
+
+        .thumbnail {
+            flex: 0 0 25%;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                max-height: 120px;
+            }
+        }
+
+        .title {
+            font-family: $headings-font-family;
+            font-weight: 500;
+            font-size: 1.3em;
+            margin-bottom: 0.2em;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-family: $headings-font-family;
+            font-size: 1.0em;
+            margin-bottom: 0.2em;
+        }
+
+        .description {
+            font-weight: 300;
+            font-size: 1em;
+            margin-bottom: 0.3em;
+        }
+
+        .date {
+            font-weight: 300;
+            font-size: 0.85em;
+            margin-top: 0.3em;
+            text-align: right;
+        }
+
+        .item-categories {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 0.4em;
+            column-gap: 0.4em;
+            margin: 0.5em 0;
+
+            .item-category {
+                color: $gray-400;
+                border: 1px solid $gray-500;
+                border-radius: 0.25rem;
+                text-transform: uppercase;
+                font-size: 0.65em;
+                padding: 0.15em 0.5em;
+                cursor: pointer;
+            }
+        }
+
+        .research-coauthors {
+            font-weight: 500;
+            font-size: 0.8em;
+            margin-bottom: 0.5em;
+            color: $gray-500;
+        }
+
+        ul.research-links {
+            padding: 0 0.5em;
+            margin-bottom: 0;
+
+            .research-link {
+                display: inline-block;
+                white-space: nowrap;
+                margin: 0;
+                padding: 0.5em 1em 0.5em 0;
+                font-size: 0.85em;
+            }
+        }
+    }
+}
+
+
+// Talks
+.talks {
+    .talk-entry {
+        display: flex;
+        flex-direction: row;
+        font-family: sans-serif;
+        line-height: 1.3;
+        margin-bottom: 3em;
+        column-gap: 0.7em;
+
+        .body {
+            flex: 1 1 auto;
+        }
+
+        .feature {
+            flex: 0 0 25%;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                max-height: 120px;
+            }
+        }
+
+        .talk-title {
+            font-family: $headings-font-family;
+            font-weight: 500;
+            font-size: 1.25em;
+            margin-bottom: 0.2em;
+        }
+        
+        .talk-details {
+            font-weight: 500;
+            font-size: 0.8em;
+            margin-bottom: 0.5em;
+            color: $gray-500;
+        }
+
+        .talk-description {
+            font-weight: 500;
+            font-size: 1.0em;
+            margin-bottom: 0.5em;
+            color: $gray-300;
+        }
+
+        ul.talk-links {
+            padding: 0 0.5em;
+            margin-bottom: 0;
+
+            .talk-link {
+                display: inline-block;
+                white-space: nowrap;
+                margin: 0;
+                padding: 0.5em 1em 0.5em 0;
+                font-size: 0.85em;
+            }
+        }
+    }
+}
+
+// footer
+
+.nav-footer {
+    align-items: flex-start;  // Align all flex items to the top
+    flex-wrap: wrap;
+    border: 0 !important;
+    min-height: 3em;
+    font-family: $footer-font-family;
+
+    a {
+        color: $link-color;
+    }
+
+    .faux-block {
+        display: block;
+        padding-bottom: 0.4em;
+    }
+
+    .fingerprint {
+        font-family: $font-family-monospace;
+        font-size: 0.8em;
+    }
+
+    // In the default Quarto template, .nav-footer-center has position: absolute 
+    // turned on, which makes the div not be a flex item
+    // This changes that so that it *is* a flex item
+    .nav-footer-center {
+        text-align: center;
+        position: inherit;
+        margin-top: 0;
+
+        @media (max-width: map-get($grid-breakpoints, md)) {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+    }
+
+    // When the screen is medium or smaller, make each footer chunk be 100% width 
+    // and centered; otherwise make them be 33% width and left/right/centerd
+    .nav-footer-left {
+        font-size: 0.7em;
+        text-align: center;
+        width: 100%;
+        min-height: 2em;
+    }
+
+    .nav-footer-center {
+        font-size: 1em;
+        text-align: center;
+        width: 100%;
+        min-height: 2em;
+    }
+
+    .nav-footer-right {
+        font-size: 0.9em;
+        text-align: center;
+        width: 100%;
+        min-height: 2em;
+    }
+    
+
+    @media (min-width: map-get($grid-breakpoints, md)) {
+        .nav-footer-left {
+            text-align: left;
+        }
+
+        .nav-footer-right {
+            text-align: right;
+        }
+
+        .nav-footer-left,
+        .nav-footer-right,
+        .nav-footer-center {
+            flex: 1 1 33%;
+        }
+    }
+}
+
+#title-block-header {
+    .quarto-title-banner {
+        font-family: $headings-font-family;
+        
+        .description {
+            font-size: 1.1em;
+            margin-top: 1em !important;
+        }
+    }
+}
+
+// Other
+.slide-deck {
+    width: 100%;
+    height: 475px;
+}
+  
+@media only screen and (max-width: 600px) {
+.slide-deck {
+    height: 400px;
+}
+}
