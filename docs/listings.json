@@ -15,5 +15,9 @@
   {
     "listing": "/docs/talks/index.html",
     "items": []
+  },
+  {
+    "listing": "/talks/index.html",
+    "items": []
   }
 ]

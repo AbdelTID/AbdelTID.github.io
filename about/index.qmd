@@ -17,7 +17,7 @@ listing:
     max-items: 1
     template: ../static/html/about/project.ejs
   - id: talks
-    contents: ../talks/talks_2023.yml
+    contents: ../talks/talks_2022.yml
     sort: "date desc"
     template: ../static/html/about/talks.ejs
 page-layout: full

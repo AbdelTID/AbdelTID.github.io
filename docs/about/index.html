@@ -76,9 +76,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-project','listing-website','listing-format','listing-_quarto-vars','listing-language','listing-title','listing-author','listing-page-layout','listing-toc','listing-toc-location','listing-toc-title','listing-date-format','listing-path','listing-outputHref','listing-description','listing-filename','listing-file-modified','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-format','listing-_quarto-vars','listing-language','listing-title','listing-description','listing-author','listing-page-layout','listing-toc','listing-toc-location','listing-toc-title','listing-date-format','listing-path','listing-outputHref','listing-filename','listing-file-modified','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-_quarto-vars","listing-language","listing-title","listing-author","listing-page-layout","listing-toc","listing-toc-location","listing-toc-title","listing-date-format","listing-path","listing-outputHref","listing-description","listing-filename","listing-file-modified","listing-reading-time"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-_quarto-vars","listing-language","listing-title","listing-description","listing-author","listing-page-layout","listing-toc","listing-toc-location","listing-toc-title","listing-date-format","listing-path","listing-outputHref","listing-filename","listing-file-modified","listing-reading-time"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -132,9 +132,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-title','listing-date','listing-language','listing-description','listing-location','listing-features','listing-links',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-title","listing-date","listing-language","listing-description","listing-location","listing-features","listing-links"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -297,6 +297,28 @@ No matching items
 <h2 class="anchored" data-anchor-id="last-talks">LAST TALKS</h2>
 <div id="listing-talks" class="quarto-listing quarto-listing-container-custom">
 <div class="talks">
+            <div class="talk-entry">
+                <div class="feature">
+                    <img src="" alt="Political Economy T.A session" title="Political Economy T.A session">
+                </div>
+                <div class="body">
+                    <p class="talk-title">
+                        Political Economy T.A session 
+                    </p>
+                    <p class="talk-details">
+                        <span class="talk-date">Oct 31, 2022</span> ∙ 
+                        <span class="talk-location">African School of Economics, Abomey-Calavi</span>
+                    </p>
+                    <p class="talk-description">I Provided training and guidance in Python and R for data analysis and visualization of Political and Conflict Events using ACLED data.</p>
+                    <ul class="talk-links">
+                        <li class="talk-link">
+                            <a href="../talks/talks_2022/TA/index.html">
+                                <i class="fa-solid fa-chalkboard-user"></i> Slides
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items

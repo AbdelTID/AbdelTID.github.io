@@ -1,0 +1,983 @@
+---
+title: Political Economy T.A session
+subtitle: Ethiopia Armed conflict data analysis   
+format:
+  clean-revealjs:
+    self-contained: true
+    fig-cap-location: top
+author:
+  - name: Abdel An'lah Tidjani
+    affiliations: MMES II | African School of Economics
+date: 10/31/2022
+execute:
+    echo: true
+    warning: false
+    message: false
+    cache: false
+---
+
+
+![](data/ETH.png)
+
+## Instruction{ .smaller}
+
+- These are just a few statistics you can use, but you're not allowed to be limited to that.
+
+- Use your analytical skill
+
+- Choose no more than six statistics you think are relevant and communicate well about conflict in your country
+
+- Those who have already done a good job don't need to edit their work too much, just fix your mistake
+
+- Choose either a chart or a table, not both, because it's just a replication.
+- Both give us the same information and some time a table communicate well than a chart
+
+- <span style="color:crimson">**Don't forget to comment your chart or table**.
+
+- <span style="color:royalblue">Write a summary of your finding at the end of your work
+
+
+
+## Packages and notebook config
+
+::: {.panel-tabset}
+
+### Python
+
+```{python}
+#library
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+import numpy as np 
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+# Number of rows and columns to display
+pd.set_option('display.max_rows', 150)
+pd.set_option('display.max_columns', 150)
+pd.set_option('display.float_format', lambda x: '%.2f' % x)
+```
+
+### R
+
+```{r}
+library('tidyverse')
+library('anytime')
+library('plotly')
+library('pander')
+library('haven')
+library('lubridate')
+library('hrbrthemes')
+
+# ggplot2::theme_set(ggplot2::theme_minimal())
+# knitr::opts_chunk$set(
+#   collapse = TRUE,
+#   comment = "#>",
+#   fig.align = 'center',
+#   dpi = "retina"
+# )
+```
+
+:::
+
+
+## Load data
+
+### Function to load the data
+
+::: {.panel-tabset}
+
+### Python
+```{python}
+#  function to load the data and label some features before analysis 
+def wrangle(file):
+    
+    # Load data
+    dataset_name = file
+    try:
+        df = pd.read_csv(dataset_name,parse_dates=['event_date'])
+    except:
+        df = pd.read_csv(dataset_name, sep=';',parse_dates=['event_date'])
+        
+    # Transform variable
+
+    key = [10,11,12,13,14,15,16,17,18,20,22,23,24,25,26,27,28,30,33,34,35,
+           36,37,38,40,44,45,46,47,48,50,55,56,57,58,60,66,67,68,78,80,88]
+
+    value = ['sole military action', 'military versus military', 'military versus rebels',
+     'military versus political militia','military versus communal militia','military versus rioters',
+     'military versus protesters', 'military versus civilians','military versus other','sole rebel action',
+     'rebels versus rebels', 'rebels versus political miliita','rebels versus communal militia',
+     'rebels versus rioters', 'rebels versus protesters', 'rebels versus civilians',
+     'rebels versus others', 'sole political militia action', 'political militia versus political militia',
+     'political militia versus communal militia', 'political militia versus rioters',
+     'political militia versus protesters','political militia versus civilians',
+     'political militia versus others', 'sole communal militia action',
+     'communal militia versus communal militia', 'communal militia versus rioters',
+     'communal militia versus protesters','communal militia versus civilians',
+     'communal militia versus other', 'sole rioter action', 'rioters versus rioters',
+     'rioters versus protesters', 'rioters versus civilians', 'rioters versus others',
+     'sole protester action', 'protesters versus protesters','protesters versus civilians',
+     'protesters versus other', 'other actor versus civilians','sole other action',
+     'other force versus  other force']
+
+    actor_type= ['no victicme', 'state forces', 'rebel groups', 'political militias',
+     'communal militias','rioters', 'protesters', 'civilians', 'other forces']
+
+    actor_key=range(0,9)
+
+    # inter1
+    df["inter1"]=df["inter1"].replace(actor_key,actor_type)
+
+    # interaction    
+    df["interaction"]=df["interaction"].replace(key,value)
+
+    # convert event_date to datetime dtype 
+    # df['event_date']=pd.to_datetime(df["event_date"], format="%d %B %Y")
+
+    return df
+
+#  axis formatting
+axis_font = dict(
+    showline=True,showgrid=False,
+    showticklabels=True,
+    linecolor='rgb(204, 204, 204)',
+    linewidth=2,ticks='outside',
+    tickfont=dict(family='San-Serif',
+        size=12, color='black', ))
+
+colors=sns.color_palette('Set3')
+```
+
+
+### R
+```{r}
+#  function to load the data and label some features before analysis 
+
+wrangle <- function(file){
+  
+  # Load data
+  df <- read.csv(file)
+  if (ncol(df)<2){df <-read.csv(file,sep = ';')}
+
+
+  # Transform variable
+  key <- c(10,11,12,13,14,15,16,17,18,20,22,23,24,25,26,27,28,30,33,34,35,
+           36,37,38,40,44,45,46,47,48,50,55,56,57,58,60,66,67,68,78,80,88)
+
+  value <-c('sole military action', 'military versus military'
+           , 'military versus rebels', 'military versus political militia'
+           ,'military versus communal militia', 'military versus rioters'
+           ,'military versus protesters', 'military versus civilians'
+           ,'military versus other', 'sole rebel action'
+           , 'rebels versus rebels', 'rebels versus political miliita'
+           ,'rebels versus communal militia', 'rebels versus rioters'
+           , 'rebels versus protesters', 'rebels versus civilians'
+           ,'rebels versus others', 'sole political militia action'
+           , 'political militia versus political militia'
+           ,'political militia versus communal militia'
+           , 'political militia versus rioters'
+           , 'political militia versus protesters'
+           ,'political militia versus civilians'
+           , 'political militia versus others'
+           , 'sole communal militia action'
+           ,'communal militia versus communal militia'
+           , 'communal militia versus rioters'
+           , 'communal militia versus protesters'
+           ,'communal militia versus civilians'
+           , 'communal militia versus other', 'sole rioter action'
+           , 'rioters versus rioters','rioters versus protesters'
+           , 'rioters versus civilians', 'rioters versus others'
+           , 'sole protester action', 'protesters versus protesters'
+           ,'protesters versus civilians', 'protesters versus other'
+           , 'other actor versus civilians', 'sole other action'
+           ,'other force versus  other force')
+
+  actor_type<-c('no victicme', 'state forces', 'rebel groups'
+                 , 'political militias', 'communal militias'
+             ,'rioters', 'protesters', 'civilians', 'other forces')
+  actor_key<-0:8
+
+  # inter1
+  df$inter1 <- factor(df$inter1,levels = actor_key,labels = actor_type)
+
+  # interaction  
+  df$interaction <- factor(df$interaction, levels = key,labels = value)
+  
+  # convert event_date to datetime  
+  df$event_date <- as.Date(df$event_date,format="%d-%b-%y")
+  
+  return(df)
+}
+```
+:::
+
+## Load data {.scrollable}
+
+::: {.panel-tabset}
+
+### Python
+```{python}
+# Load data
+df = wrangle('./data/Ethiopia_1997-2022_Sep23.csv')
+
+## Columns name
+# print(df.columns)
+
+# get some imformation about the data
+df.info()
+```
+
+
+### R
+```{r}
+# Load data
+df<- wrangle('./data/Ethiopia_1997-2022_Sep23.csv')
+
+## Columns name
+# names(df)
+
+# glimpse : get some imformation about the data
+df%>%glimpse()
+```
+:::
+
+
+
+# Analysis {background-color="#40666e"}
+
+## Map of conflict{.scrollable}
+
+::: {.panel-tabset}
+
+### Python
+
+```{python}
+## Plot Mapbox location and event type
+fig = px.scatter_mapbox(
+    df[df['event_date']>'2013-12-31'], # Our DataFrame
+    lat="latitude",
+    lon="longitude",	
+    # width=1000, # Width of map
+    height=700, # Height of map
+    title=f"<b>Political violence & protest events in {df['country'].unique()[0]}<b>",
+    labels={'event_type':'<b>Event Type'} ,
+    # size="fatalities",
+    size_max=20,
+    zoom=3.8,
+    center={'lon':39,'lat':9},
+    color="event_type",
+    # Display notes when hovering mouse over event
+    hover_data=['interaction', 'year', 'fatalities', 'location'], 
+)
+fig.update_layout(
+    mapbox_style="open-street-map",
+                  title_x=0.5,
+                 )
+```
+
+### R
+
+```{r}
+## Plot Mapbox location and event type
+fig <-df %>% 
+  plot_ly(
+    lat = ~latitude,
+    lon = ~longitude,
+    color=~event_type,
+    # marker = list(color = "fuchsia"),
+    type = 'scattermapbox',
+    hovertext = ~paste(interaction, year, fatalities, location, sep = "<br />")
+    
+  )
+fig <- fig %>%
+  layout(
+    title = paste("<b>Political violence & protest events in"
+                  ,df$country[1]
+                  ,"<b>"),
+    mapbox = list(
+      style = 'open-street-map',
+      zoom =3.8
+      ,center = list(lon = 39, lat =9)
+      )) 
+
+fig
+```
+
+:::
+
+## Event type and Sub event type
+
+::: {.panel-tabset}
+
+### Python
+```{python}
+#| output-location: column
+
+#event_type percent
+event_type=df["event_type"].value_counts(
+                normalize=True)
+
+title="<b>Event Type percentage"
+
+# Pie chart
+fig = go.Figure(data=[go.Pie(
+    labels=event_type.index, 
+    values=event_type, 
+    # textinfo = 'label+percent',
+    textposition = 'inside',
+    insidetextfont={'color':'white'},
+    pull=[0.1, 0, 0.2,0, 0,0])])
+fig.update_layout(
+  title_text=title+" since 1997 Ethiopia<b>",
+  titlefont={'size': 14, 'family':'Serif'},
+  title_x=0.5, margin={"l":0,'r':0}
+  # width=600,height=400,
+)
+```
+
+### R
+
+```{r}
+#| output-location: column
+
+#event_type percent
+event_type <-df %>%
+    group_by(event_type) %>%
+    count() %>% 
+    ungroup() %>% 
+    mutate(perc = n / sum(n)) %>% 
+    arrange(desc(perc)) %>%
+    mutate(labels = scales::percent(perc))
+
+# Pie hart
+fig <- plot_ly(df, labels = ~event_type,
+    type = 'pie',height=500,width=500,
+    textposition = 'inside',
+    insidetextfont = list(color = '#FFFFFF'),
+    marker = list(line = list(
+    color = '#FFFFFF', width = 1)),pull=0.03
+  ) %>% layout(title= list(
+  text="Event Type percentage since 1997 in Ethiopia",
+  font= list(family = "Times New Roman",
+  color = "black",size=15))
+  )
+fig
+```
+
+:::
+
+## Event type and Sub event type
+
+```{python}
+#| output-location: column
+
+# event and sub_event 
+
+sub_event=df.groupby(["event_type","sub_event_type"]
+        )["event_date"].agg({'count'}).reset_index()
+
+# Event type and Sub event type visualisation 
+
+fig = px.sunburst(sub_event, 
+          path=['event_type', 'sub_event_type'], 
+          values='count',
+          # width=600, # Width of map
+        # height=600,
+        )
+fig.update_traces(textinfo="label+percent parent") 
+```
+
+
+
+## Actor type
+
+::: {.panel-tabset}
+
+### Python
+```{python}
+#| output-location: column
+ 
+fig = px.bar(df['inter1'].value_counts()
+            .sort_values(ascending=True),
+            orientation='h',
+            # height=400,width=800
+            )
+fig.update_layout(
+    xaxis=axis_font,
+    yaxis=axis_font,
+    title_text="<b> Number of conflicts events "+
+           "by Actor Type in Ethiopia (ACLED)<b>",
+    titlefont={'color':'black', 'size': 16,
+               'family': 'San-Serif'},
+    title_x=0.5,yaxis_title=None, xaxis_title=None,
+    showlegend=False,
+    plot_bgcolor='white', 
+    margin={"l":0,'r':0}
+)
+```
+
+### R
+
+```{r}
+#| output-location: column
+#| fig-cap: Number of conflicts events by Actor Type in Ethiopia (ACLED)
+
+actor_type<-df %>%
+    group_by(inter1) %>%
+    count() %>% 
+    arrange(desc(n))
+
+p<- actor_type %>% 
+  ggplot(aes(x = reorder(inter1,n), y = n)) +
+  geom_bar(stat = "identity",fill="royalblue") +
+  coord_flip() +
+  labs(x = NULL, y = NULL)+
+  theme_minimal()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_blank())
+
+# With plotly
+# ggplotly(p)
+
+p
+```
+
+:::
+
+## Event Trend
+
+::: {.panel-tabset}
+
+### Python 
+```{python}
+#| output-location: column
+
+# number of event per month
+number_ev=df["event_type"].groupby(
+  [df['event_date'].dt.year.rename('year'), 
+  df['event_date'].dt.month.rename('month')]
+  ).agg({'count'})
+number_ev.index = [pd.datetime(year, month,1)
+          for (year,month) in number_ev.index]
+
+fig = px.line(number_ev)
+
+fig.update_layout(
+    yaxis=axis_font,xaxis=axis_font,
+    title_text="<b> Conflict events trend "+
+        f"in {df['country'].unique()[0]} (ACLED)<b>",
+    titlefont={'color':'black', 'size': 16,
+     'family': 'San-Serif'},
+    title_x=0.5,yaxis_title=None, xaxis_title=None,
+    showlegend=False, plot_bgcolor='white', 
+    font=dict(color ='black',),
+    margin={"l":0,'r':0}
+)
+```
+
+### R
+
+```{r}
+#| output-location: column
+#| fig-cap: Conflict events trend in Ethiopia (ACLED)
+
+# number of event per month
+event <- df %>% 
+  mutate(year = year(event_date)
+         , month = month(event_date,
+          abbr = FALSE, label = TRUE)) %>% 
+  group_by(year, month) %>% 
+  summarise(count = n()) %>% 
+  mutate(date  = as.Date(paste(year,month,1)
+                    ,format="%Y %B %d"))
+
+p <- event %>%
+  ggplot( aes(x=date, y=count)) +
+    geom_line(color="royalblue",size=1) +
+    labs( x = NULL ,y = NULL) +
+    scale_x_date(date_breaks = "5 year",
+                 date_labels = "%Y")+
+    theme_minimal()+
+    theme(panel.grid.minor = element_blank())
+p
+```
+:::
+
+## Fatalities Trend
+
+
+::: {.panel-tabset}
+
+### Python
+
+```{python}
+#| output-location: column
+number_fatalities = df["fatalities"].groupby(
+  [df['event_date'].dt.year.rename('year'), 
+   df['event_date'].dt.month.rename('month')]
+   ).agg({'sum'})
+number_fatalities.index = [pd.datetime(year, month,1)
+       for (year,month) in number_fatalities.index]
+
+fig = px.line(number_fatalities)
+fig.update_traces(line=dict(color='red')
+  ).update_layout(
+    xaxis=axis_font, yaxis=axis_font,
+    title_text=f"<b> Conflict fatalities trend "+
+    f"in {df['country'].unique()[0]} (ACLED)<b>",
+    titlefont={'color':'black', 'size': 16,
+     'family': 'San-Serif'},
+    title_x=0.5,yaxis_title=None, xaxis_title=None,
+    showlegend=False, plot_bgcolor='white', 
+    margin={"l":0,'r':0}
+)
+```
+
+### R
+```{r}
+#| output-location: column
+#| fig-cap: Conflict fatalities trend in Ethiopia (ACLED)
+
+fatality <- df %>% 
+  mutate(year = year(event_date), 
+         month = month(event_date,
+         abbr = FALSE, label = TRUE)) %>% 
+  group_by(year, month) %>% 
+  summarise(fat = sum(fatalities)) %>% 
+  mutate(date  = as.Date(paste(year,month,1)
+                   ,format="%Y %B %d"))
+p <- fatality%>%
+  ggplot( aes(x=date, y=fat)) +
+    geom_line(color="red",size=1) +
+    labs( x = NULL ,y = NULL) +
+    scale_x_date(date_breaks = "5 year",
+                 date_labels = "%Y")+
+    theme_minimal()
+p
+```
+
+:::
+
+
+
+## Conflict-Year
+
+::: {.panel-tabset}
+
+### Python
+```{python}
+#| output-location: column
+
+df1 = (df[df['event_date']>'2014-12-31']
+ .groupby(['year','event_type'])
+ .agg({"event_date": 'count'})
+  .rename(columns= {'event_date':'Count'})
+ .reset_index()
+)
+df1['year'] = df1['year'].astype(str)
+
+fig = px.bar(df1, x = 'year',color='event_type',
+      y='Count', # height=400,width=800,
+)
+fig.update_layout(
+    xaxis=axis_font,xaxis_title=None,
+    yaxis=axis_font,yaxis_title=None,
+    title_text=f"<b>Events in Ethiopia (ACLED)<b>",
+    titlefont={'color':'black',
+     'size': 16, 'family': 'San-Serif'},
+    title_x=0.5,showlegend=True,
+    legend={"font":{'size':8},'title':None},
+    margin={"l":0,'r':0},
+    plot_bgcolor='white', 
+    font=dict(color ='black',)
+)
+```
+
+### R
+```{r}
+#| output-location: column
+#| fig-cap: Events in Ethiopia (ACLED)
+df2 <- df %>% 
+  group_by(year, event_type) %>% 
+  summarise(n = n()) 
+
+
+df2 %>% filter(year>2014) %>% 
+  ggplot(aes(x =factor( year), y = n)) +
+  geom_bar(stat = "identity",
+   aes(fill = event_type)) +
+  labs(x = NULL, y = NULL,fill = NULL)+
+  theme_minimal()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank())
+```
+:::
+
+## Fatalities-Year
+
+::: {.panel-tabset}
+
+### Python
+
+```{python}
+#| output-location: column
+
+df2 = (df[df['event_date']>'2014-12-31']
+ .groupby(['year','event_type'])
+ .agg({"fatalities": 'sum'})
+  # .rename(columns= {'fatalities':'sum'})/
+ .reset_index()
+)
+df2['year'] = df1['year'].astype(str)
+fig = px.bar(df2, x = 'year',color='event_type', 
+    y='fatalities', # height=400,width=800,
+)
+
+fig.update_layout(
+  xaxis=axis_font,xaxis_title=None,
+  yaxis=axis_font,yaxis_title=None,
+  title_text="<b>Fatalities in Ethiopia (ACLED)<b>",
+  titlefont={'color':'black',
+    'size': 16, 'family': 'San-Serif'},
+  title_x=0.5,showlegend=True,
+  legend={"font":{'size':8},'title':None},
+  margin={"l":0,'r':0},
+  plot_bgcolor='white', 
+  font=dict(color ='black',)
+)
+```
+
+### R
+```{r}
+#| output-location: column
+#| fig-cap: Fatalities in Ethiopia (ACLED)
+df3 <- df %>% 
+  group_by(year, event_type) %>% 
+  summarise(fat = sum(fatalities)) 
+
+
+df3 %>% filter(year>2014) %>% 
+  ggplot(aes(x =factor( year), y = fat)) +
+  geom_bar(stat = "identity",
+   aes(fill = event_type)) +
+  labs(x = NULL, y = NULL,fill = NULL)+
+  theme_minimal()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank())
+```
+:::
+
+## Interaction
+
+::: {.panel-tabset}
+
+### Python
+
+```{python}
+#| output-location: column
+
+fig = px.bar(
+  df['interaction'].value_counts().head(10),
+    orientation='h',# height=400,width=800,
+)
+fig.update_layout(
+  xaxis=axis_font,xaxis_title=None,
+  yaxis=axis_font,yaxis_title=None,
+  title_text=("<b> Most frequent Interaction"+
+   " in Ethiopia conflicts (ACLED)<b>"),
+  titlefont={'color':'black',
+    'size': 16, 'family': 'San-Serif'},
+  title_x=0.5,showlegend=False,
+  legend_title=None, margin={"l":0,'r':0},
+  plot_bgcolor='white', 
+  font=dict(color ='black',)
+)
+```
+
+### R
+```{r}
+#| output-location: column
+#| fig-cap:  Most frequent Interaction in Ethiopia conflicts (ACLED)
+
+df5<-df %>%
+    group_by(interaction) %>%
+    count() %>% 
+    arrange(desc(n))
+
+df5 %>% head(10)%>% 
+  ggplot(aes(x = reorder(interaction,n),y=n)) +
+  geom_bar(stat = "identity",fill="royalblue") +
+  coord_flip() +
+  labs(x = NULL, y = NULL)+
+  theme_minimal()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_blank())
+
+
+```
+
+:::
+
+##  Actor name involved  
+
+::: {.panel-tabset}
+
+### Python
+
+```{python}
+#| output-location: column
+
+fig = px.bar(
+  df['actor1'].value_counts().head(10),
+  orientation='h',# height=400,width=800,
+)
+fig.update_layout(
+  xaxis=axis_font,xaxis_title=None,
+  yaxis=axis_font,yaxis_title=None,
+  title_text=("<b> Most Actor involved"+
+   " in Ethiopia conflicts (ACLED)<b>"),
+  titlefont={'color':'black',
+    'size': 16, 'family': 'San-Serif'},
+  title_x=0.5,showlegend=False,
+  legend_title=None, margin={"l":0,'r':0},
+  plot_bgcolor='white', 
+  font=dict(color ='black',)
+)
+```
+
+### R
+```{r}
+#| output-location: column
+#| fig-cap: Most Actor involved in Ethiopia conflicts (ACLED
+df6<-df %>%
+    group_by(actor1) %>%
+    count() %>% 
+    arrange(desc(n))
+
+df6 %>% head(10)%>% 
+  ggplot(aes(x = reorder(actor1, n), y = n)) +
+  geom_bar(stat = "identity",fill="royalblue") +
+  coord_flip() +
+  labs(x = NULL, y = NULL)+
+  theme_minimal()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_blank(),
+        axis.text.y = element_text(size=9))
+
+```
+:::
+
+## Let modify the last plot
+
+::: {.panel-tabset}
+
+### Python
+```{python}
+#| output-location: column
+
+# ? we change the theme to dark
+fig = px.bar(
+  df['actor1'].value_counts().head(10),
+     orientation='h',# height=400,width=800,
+)
+fig.update_layout(
+  xaxis_title=None,yaxis_title=None,
+  title_text=("<b> Most Actor involved"+
+   " in Ethiopia conflicts (ACLED)<b>"),
+  titlefont={'color':'red',
+    'size': 16, 'family': 'San-Serif'},
+  title_x=0.5,showlegend=False,
+  legend_title=None, margin={"l":0,'r':0},
+  template="plotly_dark",
+)
+```
+
+### R
+
+
+```{r message=FALSE, warning=FALSE}
+#| output-location: column
+#| fig-cap: Most Actor involved in Ethiopia conflicts (ACLED)
+
+df6 %>% head(10)%>% 
+  ggplot(aes(x = reorder(actor1, n), y = n)) +
+  geom_bar(stat = "identity",fill="royalblue") +
+  coord_flip() +
+  labs(x =NULL, y = NULL)+
+  theme_ft_rc()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_blank(),
+        axis.text.y = element_text(size=9))
+```
+
+:::
+
+## Let modify the last plot
+
+::: {.panel-tabset}
+
+### Python
+```{python}
+#| output-location: column
+#| fig-cap: Most Actor involved in Ethiopia conflicts (ACLED)
+df5 = df['actor1'].value_counts()\
+    .rename('count').reset_index().head(10)
+sns.set(rc={'axes.facecolor':'#FFFFFF', 
+    'figure.facecolor':'#FFFFFF',
+    'font.sans-serif':'Arial',
+    'font.family':'sans-serif'
+})
+fig,ax = plt.subplots(figsize=(10,6))
+
+ax = sns.barplot(y="index", x= "count",data=df5,
+      edgecolor="black",palette=colors, hatch='/')
+for p in ax.patches:
+    value = f'{p.get_width():g}'
+    x = p.get_x() + p.get_width() + 100
+    y = p.get_y() + p.get_height() / 2 
+    ax.text(x, y, value, ha='left', va='center', 
+      bbox=dict(facecolor='none', edgecolor='black',
+                boxstyle='round', linewidth=1))
+ax.set(xticklabels=[],ylabel=None, xlabel=None,);
+plt.tight_layout(pad=1, w_pad=1, h_pad=1)
+ax
+```
+
+### R
+```{r}
+#| output-location: column
+#| fig-cap: Most Actor involved in Ethiopia conflicts (ACLED)
+
+df6 %>% head(10)%>% 
+  ggplot(aes(x = reorder(actor1, n), y = n)) +
+  geom_bar(stat = "identity",aes(fill = actor1),
+   show.legend = FALSE) +
+  coord_flip() +
+  labs(x = NULL, y = NULL)+
+  geom_label(aes(label = formatC(n, format="f"
+    ,big.mark=",", digits=0)), size = 2.2) +
+  theme_minimal()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_blank(),
+        axis.text.y = element_text(size=9))
+```
+:::
+
+
+# Wordcloud {background-color="#40666e"}
+
+## Wordcloud
+
+::: {.panel-tabset}
+
+### Python
+```{python}
+#| output-location: column
+
+from os import path
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+
+from wordcloud import WordCloud, STOPWORDS
+
+l=[]
+for x in list(df['notes'].values):
+    if str(x) not in l:l.append(str(x))
+
+text = ' '.join(l)
+
+stopwords = set(STOPWORDS)
+for i in ['size','no','report','said',"ongoing"
+    'arrested','reported','area','several']:
+    stopwords.add(i)
+
+wc = WordCloud(background_color="white",
+  max_words=2000,
+  # mask=None,
+  colormap ='Dark2',
+  stopwords=stopwords,
+  # contour_width=3, contour_color='steelblue'
+)
+
+# generate word cloud
+wc.generate(text.lower());
+
+plt.figure()
+# Show the wordcloud
+plt.imshow(wc, interpolation='bilinear')
+plt.axis("off");
+plt.show()
+```
+
+### R
+
+```{r,message=F,warning=FALSE}
+#| output-location: column
+
+# # Install
+# install.packages("tm")  # for text mining
+# install.packages("SnowballC") # for text stemming
+# install.packages("wordcloud") # word-cloud generator 
+# install.packages("wordcloud2")
+
+# install.packages("RColorBrewer") # color palettes
+# Load
+library("tm")
+library("SnowballC")
+library("wordcloud")
+library("wordcloud2")
+library("RColorBrewer")
+
+#Create a vector containing only the text
+text <- df$notes
+# Create a corpus  
+docs <- Corpus(VectorSource(text))
+
+# text transformation
+toSpace <- content_transformer(
+  function (x , pattern ) gsub(pattern, " ", x))
+docs <- tm_map(docs, toSpace, "/")
+docs <- tm_map(docs, toSpace, "@")
+docs <- tm_map(docs, toSpace, "\\|")
+
+
+# Convert the text to lower case
+docs <- tm_map(docs, content_transformer(tolower))
+# Remove numbers
+docs <- tm_map(docs, removeNumbers)
+# Remove english common stopwords
+docs <- tm_map(docs,removeWords,stopwords("english"))
+# Remove your own stop word
+# specify your stopwords as a character vector
+docs <- tm_map(docs, removeWords,
+ c('size','no','report','said',
+'arrested','reported','area','several')) 
+# Remove punctuations
+docs <- tm_map(docs, removePunctuation)
+# Eliminate extra white spaces
+docs <- tm_map(docs, stripWhitespace)
+
+dtm <- TermDocumentMatrix(docs)
+matrix <- as.matrix(dtm)
+words <- sort(rowSums(matrix),decreasing=TRUE)
+dfw <- data.frame(word = names(words),freq=words)
+
+set.seed(1234) # for reproducibility 
+
+# wordcloud2(data=dfw, size=1.6, color='Dark2')
+
+wordcloud(words = dfw$word, freq = dfw$freq,
+ min.freq = 50, max.words=2000,
+  random.order=FALSE,colors=brewer.pal(8, "Dark2"))
+
+
+```
+
+:::
