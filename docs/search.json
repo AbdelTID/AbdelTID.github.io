@@ -142,16 +142,16 @@
   {
     "objectID": "research/index.html#working-papers",
     "href": "research/index.html#working-papers",
-    "title": "Research",
+    "title": "Research ",
     "section": "WORKING PAPERS",
-    "text": "WORKING PAPERS"
+    "text": "WORKING PAPERS\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "research/index.html#work-in-progress",
     "href": "research/index.html#work-in-progress",
-    "title": "Research",
+    "title": "Research ",
     "section": "WORK IN PROGRESS",
-    "text": "WORK IN PROGRESS"
+    "text": "WORK IN PROGRESS\n\n\n        \n            \n                \n                        National Identity, Altruism, and Agreement with COVID-19 Containment Policy in Benin\n                \n                \n                \n                \n                    \n                        National Identity\n                    \n                    \n                        Altruism\n                    \n                    \n                        COVID-19\n                    \n                \n                \n                    with Ian Heffernan and Mohamed Nana\n                \n                \n                \n            \n        \n\n\nNo matching items"
   },
   {
     "objectID": "talks/talks_2022/TA/index.html#instruction",
@@ -270,7 +270,7 @@
     "href": "talks/talks_2022/TA/index.html#wordcloud-1",
     "title": "Political Economy T.A session",
     "section": "Wordcloud",
-    "text": "Wordcloud\n\nPythonR\n\n\n\n\nfrom os import path\nfrom PIL import Image\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport os\n\nfrom wordcloud import WordCloud, STOPWORDS\n\nl=[]\nfor x in list(df['notes'].values):\n    if str(x) not in l:l.append(str(x))\n\ntext = ' '.join(l)\n\nstopwords = set(STOPWORDS)\nfor i in ['size','no','report','said',\"ongoing\"\n    'arrested','reported','area','several']:\n    stopwords.add(i)\n\nwc = WordCloud(background_color=\"white\",\n  max_words=2000,\n  # mask=None,\n  colormap ='Dark2',\n  stopwords=stopwords,\n  # contour_width=3, contour_color='steelblue'\n)\n\n# generate word cloud\nwc.generate(text.lower());\n\nplt.figure()\n# Show the wordcloud\nplt.imshow(wc, interpolation='bilinear')\nplt.axis(\"off\");\nplt.show()\n\n\n\n\n\n\n\n\n\n\n# # Install\n# install.packages(\"tm\")  # for text mining\n# install.packages(\"SnowballC\") # for text stemming\n# install.packages(\"wordcloud\") # word-cloud generator \n# install.packages(\"wordcloud2\")\n\n# install.packages(\"RColorBrewer\") # color palettes\n# Load\nlibrary(\"tm\")\nlibrary(\"SnowballC\")\nlibrary(\"wordcloud\")\nlibrary(\"wordcloud2\")\nlibrary(\"RColorBrewer\")\n\n#Create a vector containing only the text\ntext &lt;- df$notes\n# Create a corpus  \ndocs &lt;- Corpus(VectorSource(text))\n\n# text transformation\ntoSpace &lt;- content_transformer(\n  function (x , pattern ) gsub(pattern, \" \", x))\ndocs &lt;- tm_map(docs, toSpace, \"/\")\ndocs &lt;- tm_map(docs, toSpace, \"@\")\ndocs &lt;- tm_map(docs, toSpace, \"\\\\|\")\n\n\n# Convert the text to lower case\ndocs &lt;- tm_map(docs, content_transformer(tolower))\n# Remove numbers\ndocs &lt;- tm_map(docs, removeNumbers)\n# Remove english common stopwords\ndocs &lt;- tm_map(docs,removeWords,stopwords(\"english\"))\n# Remove your own stop word\n# specify your stopwords as a character vector\ndocs &lt;- tm_map(docs, removeWords,\n c('size','no','report','said',\n'arrested','reported','area','several')) \n# Remove punctuations\ndocs &lt;- tm_map(docs, removePunctuation)\n# Eliminate extra white spaces\ndocs &lt;- tm_map(docs, stripWhitespace)\n\ndtm &lt;- TermDocumentMatrix(docs)\nmatrix &lt;- as.matrix(dtm)\nwords &lt;- sort(rowSums(matrix),decreasing=TRUE)\ndfw &lt;- data.frame(word = names(words),freq=words)\n\nset.seed(1234) # for reproducibility \n\n# wordcloud2(data=dfw, size=1.6, color='Dark2')\n\nwordcloud(words = dfw$word, freq = dfw$freq,\n min.freq = 50, max.words=2000,\n  random.order=FALSE,colors=brewer.pal(8, \"Dark2\"))"
+    "text": "Wordcloud\n\nPythonR\n\n\n\n\nfrom os import path\nfrom PIL import Image\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport os\n\nfrom wordcloud import WordCloud, STOPWORDS\n\nl=[]\nfor x in list(df['notes'].values):\n    if str(x) not in l:l.append(str(x))\n\ntext = ' '.join(l)\n\nstopwords = set(STOPWORDS)\nfor i in ['size','no','report','said',\"ongoing\",\n    'arrested','reported','area','several']:\n    stopwords.add(i)\n\nwc = WordCloud(background_color=\"white\",\n  max_words=2000,\n  # mask=None,\n  colormap ='Dark2',\n  stopwords=stopwords,\n  # contour_width=3, contour_color='steelblue'\n)\n\n# generate word cloud\nwc.generate(text.lower());\n\nplt.figure()\n# Show the wordcloud\nplt.imshow(wc, interpolation='bilinear')\nplt.axis(\"off\");\nplt.show()\n\n\n\n\n\n\n\n\n\n\n# # Install\n# install.packages(\"tm\")  # for text mining\n# install.packages(\"SnowballC\") # for text stemming\n# install.packages(\"wordcloud\") # word-cloud generator \n# install.packages(\"wordcloud2\")\n\n# install.packages(\"RColorBrewer\") # color palettes\n# Load\nlibrary(\"tm\")\nlibrary(\"SnowballC\")\nlibrary(\"wordcloud\")\nlibrary(\"wordcloud2\")\nlibrary(\"RColorBrewer\")\n\n#Create a vector containing only the text\ntext &lt;- df$notes\n# Create a corpus  \ndocs &lt;- Corpus(VectorSource(text))\n\n# text transformation\ntoSpace &lt;- content_transformer(\n  function (x , pattern ) gsub(pattern, \" \", x))\ndocs &lt;- tm_map(docs, toSpace, \"/\")\ndocs &lt;- tm_map(docs, toSpace, \"@\")\ndocs &lt;- tm_map(docs, toSpace, \"\\\\|\")\n\n\n# Convert the text to lower case\ndocs &lt;- tm_map(docs, content_transformer(tolower))\n# Remove numbers\ndocs &lt;- tm_map(docs, removeNumbers)\n# Remove english common stopwords\ndocs &lt;- tm_map(docs,removeWords,stopwords(\"english\"))\n# Remove your own stop word\n# specify your stopwords as a character vector\ndocs &lt;- tm_map(docs, removeWords,\n c('size','no','report','said',\n'arrested','reported','area','several')) \n# Remove punctuations\ndocs &lt;- tm_map(docs, removePunctuation)\n# Eliminate extra white spaces\ndocs &lt;- tm_map(docs, stripWhitespace)\n\ndtm &lt;- TermDocumentMatrix(docs)\nmatrix &lt;- as.matrix(dtm)\nwords &lt;- sort(rowSums(matrix),decreasing=TRUE)\ndfw &lt;- data.frame(word = names(words),freq=words)\n\nset.seed(1234) # for reproducibility \n\n# wordcloud2(data=dfw, size=1.6, color='Dark2')\n\nwordcloud(words = dfw$word, freq = dfw$freq,\n min.freq = 50, max.words=2000,\n  random.order=FALSE,colors=brewer.pal(8, \"Dark2\"))"
   },
   {
     "objectID": "talks/index.html",
@@ -285,5 +285,33 @@
     "title": "Talks that Last",
     "section": "",
     "text": "No matching items"
+  },
+  {
+    "objectID": "research/index.html",
+    "href": "research/index.html",
+    "title": "Research ",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "research/index.html#publication",
+    "href": "research/index.html#publication",
+    "title": "Research ",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "research/nat_alt_pap/index.html#abstract",
+    "href": "research/nat_alt_pap/index.html#abstract",
+    "title": "National Identity, Altruism, and Agreement with COVID-19 Containment Policy in Benin",
+    "section": "Abstract",
+    "text": "Abstract"
+  },
+  {
+    "objectID": "research/nat_alt_pap/index.html#important-table-figure",
+    "href": "research/nat_alt_pap/index.html#important-table-figure",
+    "title": "National Identity, Altruism, and Agreement with COVID-19 Containment Policy in Benin",
+    "section": "Important table & figure",
+    "text": "Important table & figure"
   }
 ]

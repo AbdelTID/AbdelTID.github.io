@@ -3,15 +3,15 @@ title: "Talks that Last"
 description: "A list of my talks, workshops, or other events with a time, date, and place"
 listing:
   - id: talks_2024
-    contents: talks_2023.yml
+    contents: talks_2024.yml
     sort: "date desc"
     template: ../static/html/talks/listing.ejs
   - id: talks_2023
-    contents: talks_2022.yml
+    contents: talks_2023.yml
     sort: "date desc"
     template: ../static/html/talks/listing.ejs
   - id: talks_2022
-    contents: talks_2021.yml
+    contents: talks_2022.yml
     sort: "date desc"
     template: ../static/html/talks/listing.ejs
 page-layout: full
@@ -21,6 +21,12 @@ toc-title: Year
 date-format: "MMMM D, YYYY"
 ---
 
+
+
+## 2023
+
+:::{#talks_2023}
+:::
 
 ## 2022
 

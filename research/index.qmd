@@ -1,7 +1,23 @@
 ---
-title: Research 
+title: Research {{< fa books >}}
 description: "A list of all the authorships and co-authorships of research papers"
 author: ""
+listing:
+  - id: working-papers
+    contents: "/*/index.qmd"
+    sort: "date desc"
+    template: ../static/html/research/working-papers.ejs
+    categories: true
+  - id: work-in-progress
+    contents: "/*/index.qmd"
+    sort: "date desc"
+    template: ../static/html/research/work-in-progress.ejs
+    categories: true
+  - id: publications
+    contents: "/*/index.qmd"
+    sort: "date desc"
+    template: ../static/html/research/publications.ejs
+    categories: true
 page-layout: full
 toc: true
 toc-location: right

@@ -3,6 +3,7 @@
     "listing": "/about/index.html",
     "items": [
       "/research/index.html",
+      "/research/nat_alt_pap/index.html",
       "/project/2023/03/15/Plotly_Dash/index.html"
     ]
   },
@@ -19,5 +20,11 @@
   {
     "listing": "/talks/index.html",
     "items": []
+  },
+  {
+    "listing": "/research/index.html",
+    "items": [
+      "/research/nat_alt_pap/index.html"
+    ]
   }
 ]

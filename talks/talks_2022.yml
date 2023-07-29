@@ -3,7 +3,7 @@
   language: English
   description: I Provided training and guidance in Python and R for data analysis and visualization of Political and Conflict Events using ACLED data.
   location: African School of Economics, Abomey-Calavi
-  features: /talks/feature/eth.jpg
+  feature: /talks/talks_2022/TA/data/ETH.png
   links:
   - name: Slides
     url: /talks/talks_2022/TA/index.html

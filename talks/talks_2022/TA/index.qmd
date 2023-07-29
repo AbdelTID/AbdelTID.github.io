@@ -894,7 +894,7 @@ for x in list(df['notes'].values):
 text = ' '.join(l)
 
 stopwords = set(STOPWORDS)
-for i in ['size','no','report','said',"ongoing"
+for i in ['size','no','report','said',"ongoing",
     'arrested','reported','area','several']:
     stopwords.add(i)
 

@@ -1,0 +1,43 @@
+---
+title: "National Identity, Altruism, and Agreement with COVID-19 Containment Policy in Benin"
+author:
+  - name: Ian Heffernan 
+    url: https://www.linkedin.com/in/ian-heffernan-40a586b/
+    affiliation: African School of Economics
+  - name: Abdel An'lah Tidjani
+    url: https://kazuyanagimoto.com/
+    affiliation:  African School of Economics
+  - name: Mohamed Nana
+    url: https://www.linkedin.com/in/mohamed-nana-1a3079213/
+    affiliation:  African School of Economics
+categories:
+  - National Identity
+  - Altruism
+  - COVID-19
+status: work-in-progress
+pub-info:
+  coauthors: >-
+    <a href="https://www.linkedin.com/in/ian-heffernan-40a586b/">Ian Heffernan</a>
+    and
+    <a href="https://www.linkedin.com/in/mohamed-nana-1a3079213/">Mohamed Nana</a>
+hide-detail: true
+pub-status: 
+  status: Writing
+  class: warning
+  icon: fa-solid fa-pencil
+#   status: Under review
+#   class: success
+#   icon: fas fa-glasses
+---
+
+## Important links
+
+
+
+## Abstract
+
+
+
+## Important table & figure
+
+
