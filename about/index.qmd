@@ -55,7 +55,7 @@ My research areas are microeconomics, political economy, development economics.
 [See All →](../project)
 :::
 
-## LAST TALKS
+## LAST TALK
 
 :::{#talks}
 :::
