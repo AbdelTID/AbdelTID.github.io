@@ -1,6 +1,6 @@
 ---
 title: "Abdel An'lah Tidjani"
-image: /static/img/profile.jpg
+image: /static/img/Profile.jpeg
 about:
   template: jolla
   links:
@@ -10,7 +10,7 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/abdelanlah-tidjani/
- 
+
 ---
 
 Research Assistant at [African School of Economics](https://www.africanschoolofeconomics.com/).<br>

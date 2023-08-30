@@ -34,13 +34,12 @@ website:
       <span class="faux-block">[{{< fa brands github >}}]({{< var github-url >}}) [{{< fa brands linkedin >}}]({{< var linkedin-url >}})</span>
     right: |
       <span class="faux-block">Made with [VS Code](https://code.visualstudio.com/) and [Quarto](https://quarto.org/)</span>
-      <span class="faux-block">View the source at [{{< fa brands github >}} GitHub]({{< var repo-url >}})</span>
+      <span class="faux-block">View the source at [{{< fa brands github >}} GitHub]({{< var repo-url >}})</span>      
       
 format:
   html:
-    theme:
-      light: static/html/styles.scss
-      dark: static/html/dark_styles.scss
+    theme: static/html/styles.scss
+    dark: static/html/dark_styles.scss
       
 
 
