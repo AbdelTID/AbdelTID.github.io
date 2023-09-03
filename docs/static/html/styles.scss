@@ -1,7 +1,6 @@
 /*-- scss:defaults --*/
 
-@import url(https://fonts.googleapis.com/css?family=Fraunces&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Commissioner&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap);
 
 //
 // Color system
@@ -44,10 +43,9 @@ $dark:      $black !default;
 
 // Fonts
 
+$font-family-sans-serif: "Playfair", sans-serif !default;
 
-$font-family-sans-serif: "Commissioner", sans-serif !default;
-
-$headings-font-family: "Fraunces" !default;
+$headings-font-family: "Playfair" !default;
 $headings-font-weight: 600 !default;
 
 $navbar-font-family: sans-serif !default;

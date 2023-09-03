@@ -38,10 +38,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -74,9 +76,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-project','listing-website','listing-format','listing-_quarto-vars','listing-language','listing-title','listing-description','listing-author','listing-listing','listing-page-layout','listing-toc','listing-toc-location','listing-toc-title','listing-date-format','listing-path','listing-outputHref','listing-filename','listing-file-modified','listing-reading-time','listing-categories','listing-status','listing-pub-info','listing-hide-detail','listing-pub-status',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-format','listing-_quarto-vars','listing-language','listing-title','listing-description','listing-author','listing-listing','listing-page-layout','listing-toc','listing-toc-location','listing-toc-title','listing-date-format','listing-title-block-banner','listing-path','listing-outputHref','listing-filename','listing-file-modified','listing-reading-time','listing-categories','listing-status','listing-pub-info','listing-hide-detail','listing-pub-status',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-_quarto-vars","listing-language","listing-title","listing-description","listing-author","listing-listing","listing-page-layout","listing-toc","listing-toc-location","listing-toc-title","listing-date-format","listing-path","listing-outputHref","listing-filename","listing-file-modified","listing-reading-time","listing-categories","listing-status","listing-pub-info","listing-hide-detail","listing-pub-status"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-_quarto-vars","listing-language","listing-title","listing-description","listing-author","listing-listing","listing-page-layout","listing-toc","listing-toc-location","listing-toc-title","listing-date-format","listing-title-block-banner","listing-path","listing-outputHref","listing-filename","listing-file-modified","listing-reading-time","listing-categories","listing-status","listing-pub-info","listing-hide-detail","listing-pub-status"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -102,9 +104,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-project','listing-website','listing-format','listing-_quarto-vars','listing-language','listing-freeze','listing-title-block-banner','listing-comments','listing-title','listing-subtitle','listing-date','listing-toc','listing-author','listing-categories','listing-image','listing-twitter-card','listing-knitr','listing-execute','listing-path','listing-outputHref','listing-date-modified','listing-description','listing-filename','listing-file-modified','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-format','listing-_quarto-vars','listing-language','listing-freeze','listing-title-block-banner','listing-comments','listing-title','listing-subtitle','listing-date','listing-toc','listing-author','listing-categories','listing-image','listing-twitter-card','listing-knitr','listing-execute','listing-path','listing-outputHref','listing-date-modified','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-mainfont',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-_quarto-vars","listing-language","listing-freeze","listing-title-block-banner","listing-comments","listing-title","listing-subtitle","listing-date","listing-toc","listing-author","listing-categories","listing-image","listing-twitter-card","listing-knitr","listing-execute","listing-path","listing-outputHref","listing-date-modified","listing-description","listing-filename","listing-file-modified","listing-reading-time"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-_quarto-vars","listing-language","listing-freeze","listing-title-block-banner","listing-comments","listing-title","listing-subtitle","listing-date","listing-toc","listing-author","listing-categories","listing-image","listing-twitter-card","listing-knitr","listing-execute","listing-path","listing-outputHref","listing-date-modified","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-mainfont"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -203,6 +205,7 @@ gtag('config', 'G-5RYYCCRQ2N', { 'anonymize_ip': true});
   </li>  
 </ul>
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -238,7 +241,7 @@ gtag('config', 'G-5RYYCCRQ2N', { 'anonymize_ip': true});
 <p>I am a dedicated and enthusiastic Statistician specializing in the field of Economics, driven by a profound love for Python programming. With an insatiable curiosity for data and its profound impact on economic phenomena.</p>
 <p>Currently research assistant at <a href="https://www.africanschoolofeconomics.com/">African School of Economics</a> in Abomey-Calavi, Benin.</p>
 <p>My research areas are microeconomics, political economy, development economics.</p>
-<p><i class="fa-solid fa-graduation-cap" aria-label="graduation-cap"></i> Master in Mathematics Economics and Statistics (MMES) ∙ African School of Economics ∙ 2023</p>
+<p><i class="fa-solid fa-graduation-cap" aria-label="graduation-cap"></i> Master in Mathematics Economics and Statistics (MMES) ∙ African School of Economics ∙ 2022</p>
 <p><i class="fa-solid fa-graduation-cap" aria-label="graduation-cap"></i> Bachelor in Statistics ∙ University of Abomey-Calavi | ENEAM ∙ 2019</p>
 <p><br></p>
 <section id="working-papers" class="level2">
@@ -258,7 +261,7 @@ No matching items
 <h2 class="anchored" data-anchor-id="last-project">LAST PROJECT</h2>
 <div id="listing-project" class="quarto-listing quarto-listing-container-custom">
 <div class="list project">
-    <div class="project-entry" data-index="0" data-categories="Plotly,Dash,Python,Churn" data-listing-date-sort="1678834800000" data-listing-file-modified-sort="1690371101396" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+    <div class="project-entry" data-index="0" data-categories="Plotly,Dash,Python,Churn" data-listing-date-sort="1678834800000" data-listing-file-modified-sort="1693408013198" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
             <div class="thumbnail">
                 <img src="../project/2023/03/15/Plotly_Dash/img/ch.png" alt="Holiday Plotly Dash Challenge" title="Holiday Plotly Dash Challenge">
             </div>
@@ -350,6 +353,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

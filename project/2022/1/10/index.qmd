@@ -1,5 +1,5 @@
 ---
-title: "Political &  Conflict Event in Ghana"
+title: "Political and Conflict Event in Ghana"
 subtitle: "Exploratory Data Analysis"
 date: 2022-1-10
 toc: true

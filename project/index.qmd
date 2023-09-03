@@ -19,6 +19,7 @@ toc-location: right
 date-format: "MMMM D, YYYY"
 code-tools: false
 comments: false
+mainfont: Playfair
 ---
 
 ## 2023

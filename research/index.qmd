@@ -23,6 +23,7 @@ toc: true
 toc-location: right
 toc-title: Contents
 date-format: "MMMM D, YYYY"
+title-block-banner: true
 ---
 
 

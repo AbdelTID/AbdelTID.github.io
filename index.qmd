@@ -10,7 +10,7 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/abdelanlah-tidjani/
-
+mainfont: Playfair
 ---
 
 Research Assistant at [African School of Economics](https://www.africanschoolofeconomics.com/).<br>

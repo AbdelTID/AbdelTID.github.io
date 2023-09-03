@@ -10,6 +10,7 @@ knitr: true
 execute: 
   warning: false
   message: false
+mainfont: Playfair
 ---
 
 <div style="text-align: justify"> 

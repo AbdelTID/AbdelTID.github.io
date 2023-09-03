@@ -38,8 +38,9 @@ website:
       
 format:
   html:
-    theme: static/html/styles.scss
-    dark: static/html/dark_styles.scss
+    theme: 
+      light: static/html/styles.scss
+      dark: static/html/dark_styles.scss
       
 
 

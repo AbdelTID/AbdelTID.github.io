@@ -19,6 +19,7 @@ toc: true
 toc-location: right
 toc-title: Year
 date-format: "MMMM D, YYYY"
+title-block-banner: true
 ---
 
 
