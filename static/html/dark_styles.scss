@@ -64,8 +64,9 @@ $link-decoration: none !default;
 $link-hover-decoration: underline !default;
 
 // Inline code
-$code-bg: $gray-900 !default;
+$code-bg: $black !default;
 $code-color: $gray-100 !default;
+$code-block-bg: $dark;
 
 // Code copy
 $btn-code-copy-color-active: $orange !default;

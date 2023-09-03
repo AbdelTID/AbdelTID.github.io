@@ -19,7 +19,7 @@ website:
         file: about/index.qmd
       - text: Research
         file: research/index.qmd
-      - text: Project
+      - text: Projects
         file: project/index.qmd
       - text: CV
         href: https://abdeltid.github.io/cv/cv.pdf
@@ -41,6 +41,7 @@ format:
     theme: 
       light: static/html/styles.scss
       dark: static/html/dark_styles.scss
+    mainfont: Playfair
       
 
 

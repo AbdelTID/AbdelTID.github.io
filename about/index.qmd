@@ -1,5 +1,5 @@
 ---
-title: "Hi There!"
+title: "Hi There! Welcome."
 listing:
   - id: research
     contents: ../research/**/index.qmd
@@ -20,9 +20,11 @@ listing:
     contents: ../talks/talks_2022.yml
     sort: "date desc"
     template: ../static/html/about/talks.ejs
-page-layout: full
+# page-layout: full
 title-block-banner: true
 ---
+
+I’m glad you’re here — thanks for visiting my website 😁
 
 I am a dedicated and enthusiastic Statistician specializing in the field of Economics, driven by a profound love for Python programming. With an insatiable curiosity for data and its profound impact on economic phenomena.
 
@@ -37,14 +39,16 @@ My research areas are microeconomics, political economy, development economics.
 
 <br>
 
-## WORKING PAPERS
+<!---
+ ## WORKING PAPERS
 
 :::{#research}
 :::
 
 ::: {style="text-align: right"}
 [See All →](../research)
-:::
+::: 
+--->
 
 ## LAST PROJECT 
 
