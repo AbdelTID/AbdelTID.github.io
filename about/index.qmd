@@ -28,10 +28,11 @@ I’m glad you’re here — thanks for visiting my website 😁
 
 I am a dedicated and enthusiastic Statistician specializing in the field of Economics, driven by a profound love for Python programming. With an insatiable curiosity for data and its profound impact on economic phenomena.
 
-Currently research assistant at [African School of Economics](https://www.africanschoolofeconomics.com/) in Abomey-Calavi, Benin.
+Currently Economics Student at [University of Warwick](https://warwick.ac.uk/fac/soc/economics/) in Coventry, UK.
 
 My research areas are microeconomics, political economy, development economics.
 
+{{< fa graduation-cap >}} Master of Research plus PhD &#8729; University of Warwick  &#8729;  2031
 
 {{< fa graduation-cap >}} Master in Mathematics Economics and Statistics (MMES)  &#8729; African School of Economics  &#8729;  2022
 
